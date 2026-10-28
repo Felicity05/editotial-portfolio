@@ -1,26 +1,118 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* This portfolio's theme. Utilities and regular CSS consume the same values. */
+@theme {
+  --color-*: initial;
+  --color-cream: #f5eedf;
+  --color-ink: #24211e;
+  --color-vintage-red: #873a36;
+  --color-heritage-navy: #304d65;
+  --color-rule: #7d786f;
+  --color-accent-star: #c46252;
+
+  --breakpoint-*: initial;
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+
+  --spacing: 0.25rem;
+  --spacing-gutter: clamp(1.25rem, 4.4vw, 4rem);
+  --spacing-editorial: clamp(1rem, 2vw, 1.75rem);
+  --container-newspaper: 85rem;
+
+  --text-micro: 0.5rem;
+  --text-edition-mobile: 0.5625rem;
+  --text-small-label: 0.625rem;
+  --text-label: 0.85rem;
+  --text-caption: 0.8125rem;
+  --text-name: clamp(0.875rem, 1.6vw, 1.25rem);
+  --text-body: clamp(1.0625rem, 1.5vw, 1.25rem);
+  --text-detail: 0.87em;
+  --text-link: 1em;
+  --text-masthead: clamp(4rem, 12.3vw, 11rem);
+  --text-masthead-mobile: clamp(3.5rem, 15.5vw, 7.4rem);
+  --text-intro: clamp(1.9rem, 3.8vw, 3.5rem);
+  --text-intro-mobile: clamp(1.75rem, 6.5vw, 2.5rem);
+  --text-project: clamp(2.125rem, 3.8vw, 3.5rem);
+  --text-project-mobile: clamp(1.8rem, 7.6vw, 3rem);
+  --text-project-tablet: 2.6rem;
+  --text-number: clamp(1.9rem, 3.2vw, 2.75rem);
+  --text-number-mobile: clamp(1.75rem, 7vw, 2.5rem);
+  --text-section: clamp(2.5rem, 4.4vw, 4rem);
+  --text-contact-mobile: clamp(1.5rem, 6.2vw, 2.5rem);
+  --text-about: clamp(2.5rem, 3.6vw, 3.25rem);
+  --text-about-mobile: 2.75rem;
+  --text-quote: clamp(1.8rem, 3.5vw, 3rem);
+  --text-quote-mobile: clamp(1.4rem, 5.7vw, 2.3rem);
+  --text-button: clamp(1.25rem, 2.2vw, 2rem);
+
+  --leading-body: 1.3;
+  --leading-caption: 1.4;
+  --leading-masthead: 0.96;
+  --leading-masthead-mobile: 0.88;
+  --leading-display: 1.05;
+  --leading-about: 0.95;
+  --leading-intro: 1.15;
+  --leading-quote: 1.1;
+  --leading-technologies: 1.8;
+
+  --tracking-label: 0.12em;
+  --tracking-name: 0.2em;
+  --tracking-nav-mobile: 0.045em;
+  --tracking-edition: 0.025em;
+  --tracking-colophon-mobile: 0.08em;
+  --tracking-display: -0.035em;
+  --tracking-masthead: -0.025em;
+  --tracking-intro: 0.015em;
+  --tracking-contact: -0.04em;
+  --spacing-masthead-gap: 0.14em;
+
+  --aspect-lead: 1.95;
+  --aspect-column: 2.4;
+  --aspect-wide: 5.2;
+  --aspect-wide-mobile: 3;
+  --aspect-collage: 5;
+  --aspect-collage-mobile: 3.5;
 }
 
+/* next/font owns the generated font variables; Tailwind resolves them in place. */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-instrument), Georgia, serif;
+  --font-serif: var(--font-body), Georgia, serif;
+  --font-mono: var(--font-label), monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--spacing) * 8);
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    background: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-body), Georgia, serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--color-vintage-red);
+    color: var(--color-cream);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-heritage-navy);
+    outline-offset: 5px;
+  }
+
+  /* A shared browser normalization, not component styling. */
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
 }

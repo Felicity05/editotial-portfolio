@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560">
+<rect width="960" height="560" fill="#eee5d3"/><rect x="24" y="24" width="912" height="512" fill="#f5eedf"/>
+<g stroke="#c9c1b2"><path d="M56 218H904M56 376H904M484 62V199M484 400V505"/></g>
+<g font-family="Georgia,serif" fill="#24211e"><text x="56" y="85" font-size="23">Buttons</text><text x="520" y="85" font-size="23">Tabs</text><text x="56" y="263" font-size="23">Form elements</text><text x="56" y="419" font-size="23">Checkboxes</text><text x="520" y="419" font-size="23">Inputs</text></g>
+<rect x="56" y="113" width="176" height="65" rx="4" fill="#873a36"/><rect x="255" y="113" width="176" height="65" rx="4" fill="none" stroke="#873a36" stroke-width="2"/>
+<g font-family="Georgia,serif" font-size="24"><text x="104" y="154" fill="#f5eedf">Primary</text><text x="290" y="154" fill="#873a36">Secondary</text><text x="520" y="155" fill="#873a36">Overview</text><text x="675" y="155" fill="#24211e">Settings</text><text x="800" y="155" fill="#24211e">Members</text></g>
+<path d="M520 180H626" stroke="#873a36" stroke-width="4"/>
+<rect x="55" y="288" width="479" height="65" rx="4" fill="#f9f4e9" stroke="#304d65" stroke-width="3"/><text x="76" y="329" font-family="Georgia,serif" font-size="24" fill="#68665f">Email address</text>
+<g fill="#873a36"><rect x="579" y="302" width="33" height="33" rx="4"/><rect x="57" y="447" width="34" height="34" rx="4"/></g>
+<g fill="none" stroke="#f5eedf" stroke-width="3"><path d="m586 316 6 7 13-15M64 462l6 7 13-15"/></g>
+<g font-family="Georgia,serif" font-size="23" fill="#24211e"><text x="631" y="327">Remember me</text><text x="107" y="474">Checked</text><text x="317" y="474">Unchecked</text></g>
+<rect x="267" y="447" width="34" height="34" rx="4" fill="none" stroke="#68665f"/>
+<rect x="520" y="444" width="358" height="62" rx="4" fill="#e8e2d6" stroke="#c9c1b2"/><text x="541" y="483" font-family="Georgia,serif" font-size="24" fill="#8b887f">Disabled input</text>
+</svg>
