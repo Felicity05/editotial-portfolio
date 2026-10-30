@@ -3,7 +3,7 @@ import type { Project } from "@/data/projects";
 export function ProjectHeading({ project }: { project: Project }) {
   return (
     <header className="flex items-start gap-2 pb-1">
-      <span className="font-display text-[30px] leading-normal whitespace-nowrap text-vintage-red"
+      <span className="font-display font-bold text-[30px] leading-normal whitespace-nowrap text-accent-red"
         aria-hidden="true">
         {project.number} <span className="font-semibold">/</span>
       </span>

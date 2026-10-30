@@ -18,6 +18,7 @@ export function getEditionDate(now: Date) {
       weekday: "long",
     }).format(now),
     shortLabel: new Intl.DateTimeFormat("en-US", options).format(now),
+    tinyLabel: new Intl.DateTimeFormat("en-US", {...options, month: "short", day: "2-digit"}).format(now),
     iso: new Intl.DateTimeFormat("en-CA", {
       timeZone: "America/New_York",
       year: "numeric",

@@ -4,10 +4,7 @@ export function SocialLinks() {
   const socials = [
     { label: "GitHub", url: portfolioLinks.github },
     { label: "LinkedIn", url: portfolioLinks.linkedin },
-    {
-      label: "Email",
-      url: portfolioLinks.email ? `mailto:${portfolioLinks.email}` : null,
-    },
+    { label: "Email", url: portfolioLinks.email ? `mailto:${portfolioLinks.email}` : null },
   ];
   return (
     <ul
@@ -21,10 +18,7 @@ export function SocialLinks() {
               {label}
             </a>
           ) : (
-            <span
-              className="cursor-default text-rule"
-              title={`${label} link coming soon`}
-            >
+            <span className="cursor-default text-rule" title={`${label} link coming soon`}>
               {label}
               <span className="sr-only"> — coming soon</span>
             </span>

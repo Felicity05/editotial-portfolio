@@ -1,7 +1,7 @@
 export function QuoteBand() {
   return (
     <aside
-      className="-mx-gutter mb-6 bg-heritage-navy px-4 py-3 text-center text-cream md:mx-0 md:mb-3"
+      className="mb-6 bg-heritage-navy px-4 py-3 text-center text-cream md:mb-3"
       aria-label="A guiding thought"
     >
       <blockquote className="font-display text-quote-mobile leading-quote italic md:text-quote">

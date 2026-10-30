@@ -5,6 +5,12 @@ import {
   IBM_Plex_Mono,
 } from "next/font/google";
 import "./globals.css";
+import { Masthead } from "@/components/masthead";
+import { Footer } from "@/components/footer";
+import { EditionStrip } from "@/components/edition-strip";
+import { getEditionDate, getTotalVisits } from "@/lib/edition";
+import { ReactNode } from "react";
+import { connection } from "next/server";
 
 const display = Instrument_Serif({
   variable: "--font-instrument",
@@ -29,15 +35,29 @@ export const metadata: Metadata = {
   title: "Arelys Alvarez — Interfaces & rhythm.",
   description:
     "Front end engineer in New York City. Thoughtful interfaces, built with care and made to move. " +
-      "Selected work by Arelys Alvarez.",
+    "Selected work by Arelys Alvarez.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+}: Readonly<{ children: ReactNode }>) {
+  await connection();
+  const date = getEditionDate(new Date());
+  const visits = await getTotalVisits();
   return (
-    <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
-      <body>{children}</body>
+    <html
+      lang="en"
+      data-scroll-behavior="smooth"
+      className={`${display.variable} ${body.variable} ${mono.variable}`}
+    >
+      <body>
+        <div className="mx-auto w-full max-w-newspaper">
+          <Masthead />
+          <EditionStrip date={date} visits={visits} />
+          <div className="px-gutter md:px-0">{children}</div>
+          <Footer year={date.year} />
+        </div>
+      </body>
     </html>
   );
 }

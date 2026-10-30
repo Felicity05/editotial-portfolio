@@ -3,19 +3,26 @@ import type { getEditionDate } from "@/lib/edition";
 export function EditionStrip({
   date,
   visits,
+  compactDate = false,
 }: {
   date: ReturnType<typeof getEditionDate>;
   visits: number | null;
+  compactDate?: boolean;
 }) {
   return (
-    <div className="grid grid-cols-[1fr_auto] items-center gap-2 border-y-4 border-double border-rule py-1 font-serif
-                    text-edition-mobile leading-normal tracking-edition uppercase md:gap-4 md:text-label lg:grid-cols-[1fr_auto_1fr]">
-      <p>Front End engineer</p>
-      <p className="col-span-full row-start-2 text-center lg:col-span-1 lg:row-auto">
-        New York City <span aria-hidden="true">·</span>{" "}
+    <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-2 border-y-4 border-double border-rule py-1 font-serif text-edition-mobile leading-normal tracking-edition uppercase md:gap-4 md:text-label lg:grid-cols-[1fr_auto_1fr]">
+      <p className="md:hidden">FE Engineer</p>
+      <p className="hidden md:inline">Front End Engineer</p>
+      <p className="text-center lg:col-span-1 lg:row-auto">
+        <span className="md:hidden">NYC </span>
+        <span className="hidden md:inline">New York City </span>
+        <span aria-hidden="true">·</span>{" "}
         <time dateTime={date.iso}>
-          <span className="hidden md:inline">{date.label}</span>
-          <span className="md:hidden">{date.shortLabel}</span>
+          <span className="md:hidden">{date.tinyLabel}</span>
+          <span className="hidden md:inline lg:hidden">{date.shortLabel}</span>
+          <span className="hidden lg:inline">
+            {compactDate ? date.shortLabel : date.label}
+          </span>
         </time>
       </p>
       <p className="text-right whitespace-nowrap">

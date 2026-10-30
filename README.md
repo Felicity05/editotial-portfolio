@@ -44,3 +44,9 @@ There are currently no effects complex enough to need a CSS Module. Add a coloca
 ## Visual reference
 
 The first desktop mockup (UI specimen edition) and the mobile mockup guide layout, fine rules, typography, project order, and spacing. The two mobile columns in the reference represent consecutive portions of this single page. Actual project screenshots intentionally replace the reference’s concept artwork. User-requested copy takes precedence over older mockup text. Unknown contact and case-study links remain unconfigured.
+
+## About page
+
+The dedicated `/about` route follows the supplied About mockup and shares the masthead, edition strip, footer, links, dividers, theme, and breakpoints with the homepage. Each new section has its own component file. Navigation and the homepage teaser link to `/about`; “View my work” returns to `/#work`.
+
+Edit the biography and approach copy in `src/data/aboutContent.ts`. Set `aboutContent.portrait` to an image path, dimensions, alt text, and caption when a real portrait is available; the current silhouette is explicitly labeled as a placeholder. The supplied résumé is linked at `/files/resume.pdf`; edit `portfolioLinks.resume` in `src/data/projects.ts` to change it. If the value is cleared, résumé labels show “Coming soon” and do not render dead links.

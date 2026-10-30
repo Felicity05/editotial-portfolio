@@ -8,7 +8,13 @@
   --color-vintage-red: #873a36;
   --color-heritage-navy: #304d65;
   --color-rule: #7d786f;
+  --color-accent-red: #B6302C;
+  --color-accent-navy: #1D364B;
+  --color-accent-black: #0B0B0B;
   --color-accent-star: #c46252;
+  --color-light-rule: #C3C1B5;
+  --color-accent-gold: #d4a55e;
+  --color-accent-green: #708a63;
 
   --breakpoint-*: initial;
   --breakpoint-sm: 40rem;
@@ -24,12 +30,23 @@
   --text-edition-mobile: 0.5625rem;
   --text-small-label: 0.625rem;
   --text-label: 0.85rem;
+  --text-technology-tablet: clamp(0.625rem, 1.25vw, 0.75rem);
   --text-caption: 0.8125rem;
   --text-name: clamp(0.875rem, 1.6vw, 1.25rem);
   --text-body: clamp(1.0625rem, 1.5vw, 1.25rem);
   --text-detail: 0.87em;
   --text-link: 1em;
   --text-masthead: clamp(4rem, 12.3vw, 11rem);
+  --text-masthead-compact: clamp(4rem, 8.4vw, 8rem);
+  --text-masthead-compact-mobile: clamp(2.75rem, 12vw, 4.5rem);
+  --text-about-body: clamp(1.125rem, 1.875vw, 2.15rem);
+  --text-about-copy: clamp(1.0625rem, 1.8vw, 1.5rem);
+  --text-about-title: clamp(3.5rem, 8vw, 7.5rem);
+  --text-about-greeting: clamp(3rem, 6vw, 5.5rem);
+  --text-about-section: clamp(2.75rem, 5.8vw, 5.25rem);
+  --text-about-subheading: clamp(1.75rem, 2.6vw, 2.5rem);
+  --aspect-portrait: 1;
+  --aspect-story: 2.3;
   --text-masthead-mobile: clamp(3.5rem, 15.5vw, 7.4rem);
   --text-intro: clamp(1.9rem, 3.8vw, 3.5rem);
   --text-intro-mobile: clamp(1.75rem, 6.5vw, 2.5rem);

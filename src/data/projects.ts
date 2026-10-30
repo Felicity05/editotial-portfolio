@@ -30,7 +30,7 @@ export const projects: readonly Project[] = [
       "A responsive website and ticket platform for Cuban music and dance social event series I organize.",
     detail:
       "Supports free RSVPs and ticketed event registration, form validation, duplicate-registration prevention, payment handling via Stripe integration, event check in, and attendee-management workflows.",
-    technologies: ["Next.js", "TypeScript", "Supabase", "Stripe"],
+    technologies: ["Next.js", "TypeScript", "Supabase"],
     media: {
       src: "/images/el-solar-concept.png",
       alt: "El Solar Timbero website with its illustrated logo, RSVP information, and community footer.",
@@ -45,7 +45,7 @@ export const projects: readonly Project[] = [
     id: "moodify",
     number: "02",
     title: "Moodify",
-    layout: "column",
+    layout: "lead",
     description: "Mood generator playlist for Spotify.",
     technologies: ["React", "TypeScript", "Python"],
     media: {
@@ -81,10 +81,9 @@ export const projects: readonly Project[] = [
     number: "04",
     title: "Cloud Carbon Footprint",
     category: "Open-source contributions",
-    layout: "wide",
+    layout: "column",
     description: "Selected contributions to an open-source project.",
-    detail:
-      "My role: contributor to the project, rather than creator or owner of the product.",
+    detail: "Dashboard emissions screen, emissions recommendations, and a carbon equivalent calculator.",
     technologies: ["React", "TypeScript"],
     media: {
       src: "/images/cloud-carbon.svg",
@@ -103,7 +102,9 @@ export const portfolioLinks: {
   email: string | null;
   github: string | null;
   linkedin: string | null;
+  resume: string | null;
 } = {
+  resume: "/files/resume.pdf",
   email: "aalva456@yahoo.com",
   github: "https://github.com/Felicity05",
   linkedin: "https://linkedin.com/in/arelysalvarez",

@@ -4,11 +4,9 @@ import { Arrow } from "./arrow";
 import { buttonClasses } from "./control-styles";
 
 export function ContactControl() {
-  return portfolioLinks.email ? (
-    <EditorialLink href={`mailto:${portfolioLinks.email}`} button>
-      Let’s talk
-    </EditorialLink>
-  ) : (
+  return portfolioLinks.email ?
+    <EditorialLink href={`mailto:${portfolioLinks.email}`} button displayText="Let's talk"/>
+    : (
     <details className="relative">
       <summary className={`${buttonClasses} list-none`}>
         Let’s talk <Arrow />
