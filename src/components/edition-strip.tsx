@@ -28,10 +28,11 @@ export function EditionStrip({
       <p className="text-right whitespace-nowrap">
         Vol. 1 · No.{" "}
         <span
+          title="Total recorded page views since Web Analytics was enabled"
           aria-label={
             visits === null
               ? "Visit count unavailable"
-              : `${visits} total visits`
+              : `${visits} total page views`
           }
         >
           {visits === null

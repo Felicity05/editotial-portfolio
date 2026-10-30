@@ -1,8 +1,12 @@
-/** Replace with a server-side, all-time analytics query when a source is connected.
- * No analytics credentials, database, or provider exist in this starter.
- */
+import "server-only";
+import { readTotalPageViews } from "./vercel-analytics";
+
 export async function getTotalVisits(): Promise<number | null> {
-  return null;
+  return readTotalPageViews({
+    token: process.env.VERCEL_ANALYTICS_TOKEN,
+    projectId: process.env.VERCEL_PROJECT_ID,
+    teamId: process.env.VERCEL_TEAM_ID,
+  });
 }
 
 export function getEditionDate(now: Date) {
@@ -18,7 +22,11 @@ export function getEditionDate(now: Date) {
       weekday: "long",
     }).format(now),
     shortLabel: new Intl.DateTimeFormat("en-US", options).format(now),
-    tinyLabel: new Intl.DateTimeFormat("en-US", {...options, month: "short", day: "2-digit"}).format(now),
+    tinyLabel: new Intl.DateTimeFormat("en-US", {
+      ...options,
+      month: "short",
+      day: "2-digit",
+    }).format(now),
     iso: new Intl.DateTimeFormat("en-CA", {
       timeZone: "America/New_York",
       year: "numeric",

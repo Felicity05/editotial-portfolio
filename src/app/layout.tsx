@@ -11,6 +11,7 @@ import { EditionStrip } from "@/components/edition-strip";
 import { getEditionDate, getTotalVisits } from "@/lib/edition";
 import { ReactNode } from "react";
 import { connection } from "next/server";
+import { Analytics } from "@vercel/analytics/next";
 
 const display = Instrument_Serif({
   variable: "--font-instrument",
@@ -56,6 +57,7 @@ export default async function RootLayout({
           <EditionStrip date={date} visits={visits} />
           <div className="px-gutter md:px-0">{children}</div>
           <Footer year={date.year} />
+          <Analytics />
         </div>
       </body>
     </html>
